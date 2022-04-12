@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+  <title>My Document</title> 
+  <style>
+  .line{
+      border-left: thick solid rgba(0, 0, 0, 0.411);
+      height:100%;
+      left: 960px;
+      position: absolute;
+}
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript"> 
+  var i=0,g=1,k=1;
+  var char=[ ];
+  char[1]="a.jpg";
+  char[2]="b.jpg";
+  char[3]="c.jpg";
+  char[4]="d.jpg";
+  char[5]="e.jpg";
+  char[6]="f.jpg";
+  char[7]="g.jpg";
+  char[8]="h.png";
+  char[9]="i.jpg";  
+  char[10]="j.png";
+  char[11]="k.png";
+  char[12]="l.png";
+  char[13]="m.jpg";
+  char[14]="n.png";
+  char[15]="o.png";
+  char[16]="p.png";
+  char[17]="q.jpg";
+  char[18]="r.jpg";
+  char[19]="s.png";
+  char[20]="t.jpg";
+  char[21]="u.png";
+  char[22]="v.png";
+  char[23]="w.jpg";
+  char[24]="x.png";
+  char[25]="y.jpg";
+  char[26]="z.jpg";
+  var str1="";
+  var str2="";
+  var str3="";
+  var str4="";
+  var str5="";
+  var str6="";
+  function move()
+  {
+    $("#word"+g).animate({
+        left:'960px'
+    },9000,'linear',animationcomplete)
+    g++;
+  }
+  function animationcomplete()
+  {
+    $("*").empty();
+  }
+  function generate()
+  {
+    var num1 = Math.floor(Math.random() * 26 + 1);
+    i++;
+    var num2 = Math.floor(Math.random() * 6 + 1);
+    $("#an"+num2).prepend("<div id='word" + i +"' style='position:absolute;'><img src='Image/"+char[num1]+"' width='60'></div>");
+    if(num2 == 1)
+    {
+        str1=String.fromCharCode(num1+64)+str1;
+        move();
+    }
+    else if(num2 == 2)
+    {
+        str2=String.fromCharCode(num1+64)+str2;
+        move();
+    }
+    else if(num2 == 3)
+    {
+        str3=String.fromCharCode(num1+64)+str3;
+        move();
+    }
+    else if(num2 == 4)
+    {
+        str4=String.fromCharCode(num1+64)+str4;
+        move();
+    }
+    else if(num2 == 5)
+    {
+        str5=String.fromCharCode(num1+64)+str5;
+        move();
+    }
+    else if(num2 == 6)
+    {
+        str6=String.fromCharCode(num1+64)+str6;
+        move();
+    }
+  }
+  $(document).ready(function() 
+  { 
+    $("#btn1").click(function()
+    {
+      setInterval(generate,1500);
+    });
+  } );
+  $(document).ready(function() 
+  { 
+    $("*").keydown(function(e)
+    {
+     
+      if(e.key==str1.substr(-1))
+      {
+        $("#word"+k).stop();
+        $("#word"+k).remove();
+        k++;
+        str1=str1.substr(0,str1.length-1);
+      }
+      else if(e.key==str2.substr(-1))
+      {
+        $("#word"+k).stop();
+        $("#word"+k).remove();
+        k++;
+        str2=str2.substr(0,str2.length-1);
+      }
+      else if(e.key==str3.substr(-1))
+      {
+        $("#word"+k).stop();
+        $("#word"+k).remove();
+        k++;
+        str3=str3.substr(0,str3.length-1);
+      }
+      else if(e.key==str4.substr(-1))
+      {
+        $("#word"+k).stop();
+        $("#word"+k).remove();
+        k++;
+        str4=str4.substr(0,str4.length-1);
+      }
+      else if(e.key==str5.substr(-1))
+      {
+        $("#word"+k).stop();
+        $("#word"+k).remove();
+        k++;
+        str5=str5.substr(0,str5.length-1);
+      }
+      else if(e.key==str6.substr(-1))
+      {
+        $("#word"+k).stop();
+        $("#word"+k).remove();
+        k++;
+        str6=str6.substr(0,str6.length-1);
+      }
+      
+
+    });
+  } );
+  </script> 
+</head> 
+<body> 
+<button id="btn1">START</button>
+<div class="line"></div>
+</br>
+</br>
+</br>
+</br>
+<div id="an1" style="position:absolute;"></div>
+</br>
+</br>
+</br>
+</br>
+<div id="an2" style="position:absolute;"></div>
+</br>
+</br>
+</br>
+</br>
+<div id="an3" style="position:absolute;"></div>
+</br>
+</br>
+</br>
+</br>
+<div id="an4" style="position:absolute;"></div>
+</br>
+</br>
+</br>
+</br>
+<div id="an5" style="position:absolute;"></div>
+</br>
+</br>
+</br>
+</br>
+<div id="an6" style="position:absolute;"></div>
+</br>
+</br>
+</br>
+</br>
+</body> 
+</head> 
+</html>
